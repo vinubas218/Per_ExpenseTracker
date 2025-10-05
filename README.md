@@ -1,4 +1,5 @@
 Project Overview:
+
 The Personal Expense Tracker is a full-stack web application designed to help users efficiently manage and track their daily expenses. Users can add, delete, and categorize expenses, as well as add notes for each entry. The application features a responsive and intuitive frontend built with React.js, while the backend is powered by Node.js, Express, and MongoDB for data storage and API handling.
 
 Key Features:
