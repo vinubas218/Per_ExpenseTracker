@@ -37,14 +37,14 @@ const Categories = () => {
                     cat._id === editId ? { ...cat, title, amount, note, date } : cat
                 )
             );
-            await fetch(`http://localhost:8000/expenses/${editId}`, {
+            await fetch(`https://per-expensetracker.onrender.com/expenses/${editId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newCategory)
             });
             SetEditId(null);
         } else {
-            const res = await fetch("http://localhost:8000/expenses", {
+            const res = await fetch("https://per-expensetracker.onrender.com/expenses", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newCategory)
@@ -61,7 +61,7 @@ const Categories = () => {
 
     const handleDelete = async (_id) => {
         try {
-            await fetch(`http://localhost:8000/expenses/${_id}`, {
+            await fetch(`https://per-expensetracker.onrender.com/expenses/${_id}`, {
                 method: "DELETE"
             });
             SetCategory(category.filter((cat) => cat._id !== _id));
@@ -92,7 +92,7 @@ const Categories = () => {
     })
 
     useEffect(() => {
-        fetch('http://localhost:8000/expenses')
+        fetch('https://per-expensetracker.onrender.com/expenses')
             .then(res => res.json())
             .then(data => SetCategory(data))
     }, [])
